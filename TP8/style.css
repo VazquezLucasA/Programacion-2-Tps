@@ -1,60 +1,67 @@
 header{
     text-align: center;
 }
-.contenedor{
-    background-color: gray;
-    height: 45px;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    padding: 5px;
-}
-.enlaces{    
-    font-size: 25px;
-    font-family: 'Times New Roman', Times, serif;
-    margin: 10px;
-    /* border: 1px solid black; */
-    height: 30px;        
-}
-
-
-
-
-
-
-
-
-
-/* Consigna 8 */
-.granContenedor{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.noGranContenedor{
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-.noGranContenedor>.contenedorTres,.contenedorUno,.contenedorDos{
-    width: 400px;
-    background-color: cyan;
-    margin: 15px;
+h2{
     text-align: center;
 }
-.ejemplo{
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+/* consigna 1 */
+.contenedor{
+    height: 50px;
+    width: 100%;
+    background-color: #aba9a9;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+.enlaces{
+    padding-top: 10px;
+    font-size: 25px;
+    width: 10%;
+}
+.enlaces6{
+    padding-top: 10px;
+    font-size: 25px;
+    flex-grow: 1;
+}
+.contenedor7{
+    width: 300px; 
+    background-color: #aba9a9;
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+}
+/* Consigna 8 */
+.granContenedor{
+    width: 1200px;
+}
+.titulo{
     background-color: purple;
     height: 50px;
     width: 100%;
     text-align: center;
     color: whitesmoke;
 }
-.contenedorTres{
-    padding-top: 15px;
-    
+.contenedo{
+    display: flex;
 }
-.contenedorTres>button{
+.contenedo>.cont,.cont2,.cont3{
+    width: 400px;
+    background-color: cyan;
+    margin: 15px;
+}
+
+.cont3{
+    padding-top: 15px;
+}
+.cont3>button{
     height: 22px;
+}
+.botones{
+    margin: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
