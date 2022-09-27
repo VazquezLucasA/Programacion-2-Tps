@@ -1,0 +1,47 @@
+header{
+    text-align: center;
+}
+.contenedor{
+    background-color: gray;
+    height: 45px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    padding: 5px;
+}
+.enlaces{    
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 10px;
+    /* border: 1px solid black; */
+    height: 30px;        
+}
+
+.ejemplo{
+    background-color: purple;
+    height: 40px;
+    width: auto;
+    text-align: center;
+}
+.ejemplo>h2{
+    color: whitesmoke;
+}
+.granContenedor{
+    display: flex;
+    flex-direction: row;
+}
+.granContenedor>div{
+    width: 400px;
+    background-color: cyan;
+    margin: 15px;
+    text-align: cetner;
+    justify-content: center;
+}
+.contenedorTres{
+    padding-top: 15px;
+}
+.contenedorTres>button{
+    height: 22px;
+}
+
