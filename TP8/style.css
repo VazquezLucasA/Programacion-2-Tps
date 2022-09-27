@@ -18,28 +18,41 @@ header{
     height: 30px;        
 }
 
-.ejemplo{
-    background-color: purple;
-    height: 40px;
-    width: auto;
-    text-align: center;
-}
-.ejemplo>h2{
-    color: whitesmoke;
-}
+
+
+
+
+
+
+
+
+/* Consigna 8 */
 .granContenedor{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.granContenedor>div{
+.noGranContenedor{
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.noGranContenedor>.contenedorTres,.contenedorUno,.contenedorDos{
     width: 400px;
     background-color: cyan;
     margin: 15px;
-    text-align: cetner;
-    justify-content: center;
+    text-align: center;
+}
+.ejemplo{
+    background-color: purple;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    color: whitesmoke;
 }
 .contenedorTres{
     padding-top: 15px;
+    
 }
 .contenedorTres>button{
     height: 22px;
