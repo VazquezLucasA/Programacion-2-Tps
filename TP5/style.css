@@ -1,0 +1,28 @@
+.par1{
+    color: #2d6921;
+    border: 3px dotted #d66f0f;
+    width: 500px;
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 100px;
+}
+.par2{
+    position: relative;
+    left: 650px;
+    border: 3px solid blue;
+    width: 500px;
+    text-align: center;
+    padding: 50px;
+    font: oblique  ;
+}
+.par3{
+    width: 30%;
+    border: 6px outset #666;
+    padding: 10px;
+    text-align: justify;
+    line-height: 30px;
+}
+.par4{
+    width: 75%;
+    border-top: 3px solid #f0377b;
+}

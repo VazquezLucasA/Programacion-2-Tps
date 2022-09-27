@@ -1,0 +1,36 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(167, 167, 167);
+}
+header{
+    height: 100px;
+    background-image: url("fondo.jpg");
+}
+.titulo{
+    position: fixed; 
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+    font-weight: lighter;
+    font-size: 50px ;
+}
+
+.formularios{
+    display: flex;
+    background-color:rgb(241, 241, 225) ;
+    justify-content: center;
+    text-align: center;
+    height: 75px;
+    padding-top: 25px;
+    margin-top: 5px;
+}
+.inputs{
+    height: 20px;
+}
+p{
+    width: 450px;
+    text-align: justify;
+    line-height:normal ;
+    padding: 5px;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carga de curriculum vitae</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="titulo">Curriculum vitae</h1>
+    </header>
+
+    <main>
+      <form action="">
+        <fieldset class="formularios">
+          <legend>Datos personales</legend>
+
+          <label for="nom">Nombre:</label>
+          <input type="text" id="nom" placeholder="Nombre/s" class="inputs"/>
+          <br />
+
+          <label for="ape">Apellido:</label>
+          <input type="text" id="ape" placeholder="Apellido/s" class="inputs"/>
+          <br />
+
+          <label for="fn">Fecha de nacimiento:</label>
+          <input type="date" class="inputs"/>
+          <br />
+
+          <label for="dom">Domicilio:</label>
+          <input type="text" id="dom" placeholder="calle y altura" class="inputs"/>
+          <br />
+
+          <label for="email">Email:</label>
+          <input type="email" name="" id="email" class="inputs"/>
+        </fieldset>
+
+        <fieldset class="formularios">
+          <legend>sexo</legend>
+          <label for="sexo">hombre</label>
+          <input type="radio" name="sexo" id="hombre" />
+          <label for="sexo">mujer</label>
+          <input type="radio" name="sexo" id="mujer" />
+        </fieldset>
+        <fieldset class="formularios">
+          <legend>Dias disponibles</legend>
+          <table>
+            <tr>
+              <td>Lunes</td>
+              <td>Martes</td>
+              <td>Miercoles</td>
+              <td>Jueves</td>
+              <td>Viernes</td>
+              <td>Sabado</td>
+              <td>Domingo</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="disp" /></td>
+              <td><input type="checkbox" id="disp" /></td>
+              <td><input type="checkbox" id="disp" /></td>
+              <td><input type="checkbox" id="disp" /></td>
+              <td><input type="checkbox" id="disp" /></td>
+              <td><input type="checkbox" id="disp" /></td>
+              <td><input type="checkbox" id="disp" /></td>
+            </tr>
+          </table>
+        </fieldset>
+        <fieldset class="formularios">
+          <legend>Subir foto personal</legend>
+          <label for="img">Foto</label>
+          <input type="file" id="img" />
+        </fieldset>
+
+        <br />
+        
+
+        <br />
+        <br>
+        <div class="txtfinal">
+          <textarea
+          name=""
+          id=""
+          cols="55"
+          rows="5"
+          placeholder="Escriba algo sobre usted..."
+        ></textarea>
+        <br/>
+        <input type="submit" value="Enviar"/>
+      </form>
+        </div>
+
+    </main>
+
+    <footer>
+      <p>Universidad Tecnológica Nacional - Facultad Regional Tucumán.
+        Tecnicatura Universitaria en programación.
+        TP2 - Programación - año 2022.
+        Vázquez, Lucas Alejo. DNI 42467088. Legajo 55893. Comisión 4.
+        </p>
+    </footer>
+  </body>
+</html>

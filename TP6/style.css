@@ -1,0 +1,147 @@
+.contenedorA{
+    display: flex;
+    margin: 5px;
+    flex-direction: row;
+    
+}
+#caja1A{
+    width: 200px;
+    height: 200px;
+    margin: 2px;
+    background-color: #aaa;
+    
+}
+#caja2A{
+    width: 200px;
+    height: 200px;
+    margin: 2px;
+    background-color: #aaa;
+    
+}
+#caja3A{
+    width: 200px;
+    margin: 2px;
+    height: 200px;
+    background-color: #aaa;
+    }
+
+.contenedorB{
+    display: flex;
+    margin: 5px;
+    flex-direction: row;
+}
+#caja1B{
+    position: absolute;
+    width:200px;
+    height:200px;
+    margin: 2px;
+    background-color: #aaa;
+    left: 420px;
+    top: 210px;
+    
+}
+#caja2B{
+    width:200px;
+    height:200px;
+    margin: 2px;
+    background-color: #aaa;
+    
+}
+#caja3B{
+    width: 200px;
+    margin: 2px;
+    height: 200x;
+    background-color: #aaa;
+    
+    
+}
+.contenedorC{
+    display: flex;
+    margin: 5px;
+}
+#caja1C{
+    
+    position: relative;
+    width: 200px;
+    height:200px;
+    margin: 2px;
+    top: 205px;
+    left: 406px;
+    background-color: #aaa;
+    
+}
+#caja2C{
+    position: relative;
+    width:200px;
+    height:200px;
+    margin: 2px;
+    background-color: #aaa;
+    
+    
+}
+#caja3C{
+    position: relative;
+    width:200px;
+    margin: 2px;
+    height: 200px;
+    background-color: #aaa;
+    
+    
+    
+    
+}
+
+
+.contenedorD{
+    display: flex;
+    margin: 5px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+#caja1D{
+    
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin:2px;
+    background-color: #aaa;
+    
+}
+#caja2D{
+    position: relative;
+    width:200px;
+    height:200px;
+    margin: 2px;
+    background-color: #aaa;
+    
+    
+}
+#caja3D{
+    position: absolute;
+    width: 200px;
+    margin: 3px;
+    height: 200px;
+    left: 220px;
+    background-color: #aaa;
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+footer
+{
+    
+    display: flex;
+    position: absolute;
+    top: 90% ;
+}
+#a{
+    margin: 5px;
+}

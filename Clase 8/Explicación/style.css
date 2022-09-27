@@ -1,0 +1,16 @@
+/* body{} */
+.caja1{background-color: #aaa;
+position:static;
+top: 100px;}
+.caja2{background: #abb;}
+.caja3{background: #acc}
+div{
+    border: 2px solid black ;
+    margin:10px;
+}
+a{
+    border: 3px red dotted;
+}
+#contenedor{
+    text-align: center;
+}

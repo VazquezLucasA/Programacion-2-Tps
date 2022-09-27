@@ -1,0 +1,29 @@
+.indexBody{
+    background-color: white;
+}
+.mainH{
+    text-align: center;
+    justify-content: center;
+}
+h1{
+    height: 15px;
+}
+.botones
+{
+    margin-left: 40%;
+}
+button{
+    font-family:'Courier New', Courier, monospace ;
+    background-color: yellow;
+    border-radius: 15%;
+}
+.pollo{
+    width: 500px;
+}
+
+.tortilla{
+    width: 500px;
+}
+.papas{
+    width: 500px;
+}
