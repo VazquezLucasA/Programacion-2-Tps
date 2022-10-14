@@ -1,0 +1,31 @@
+#cabecera{
+    background-color: blueviolet;
+    color: white;
+    border: 5px solid white;
+    text-align: center;
+
+}
+
+#pie{
+    background-color: gray;
+}
+
+.card{
+    border: 2px solid white;
+    margin-top: 5px;
+}
+
+.card-body .card-text{
+    text-align: center;
+}
+
+.card-body .card-title{
+    text-align: center;
+}
+
+.card-body .btn-primary{
+    background-color: blueviolet;
+    border: blueviolet;
+    position: relative;
+    left: 80px;
+}
