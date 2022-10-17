@@ -45,3 +45,6 @@
     height: 30px;
     background-color: whitesmoke;
 }
+.resultadoError{
+    background-color: red;
+}
