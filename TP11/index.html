@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TP 11 - Lucas Vazquez</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>TP 11 - Calculadora - Lucas Vazquez</h1>
+    </header>
+    <main>
+      <div class="calculadora">
+        <div class="container">
+          <label for="pOperando">Primer operando:</label>
+          <input
+            type="text"
+            class="inputs"
+            id="pOperando"
+            placeholder="Primer numero"
+          />
+        </div>
+
+        <div class="container">
+          <label for="sOperando">Segundo operando:</label>
+          <input
+            type="text"
+            class="inputs"
+            id="sOperando"
+            placeholder="Segundo numero"
+          />
+        </div>
+
+        <div class="botones">
+          <button class="boton">+</button>
+          <button class="boton">-</button>
+          <button class="boton">*</button>
+          <button class="boton">/</button>
+        </div>
+        <div class="container">
+          <label for="resultado">El resultado es</label>
+          <button id="resultado"></button>
+          <button class="clear">Limpiar</button>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+  <script src="script.js"></script>
+</html>
