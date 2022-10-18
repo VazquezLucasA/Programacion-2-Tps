@@ -33,18 +33,19 @@
     flex-direction: column;
     align-items: center;
 }
-#resultado{
+.resultado{
     width: 200px;
-    height: 30px;
+    height: 35px;
     background-color: whitesmoke;
 }
 
 .clear{
     margin-top: 10px;
     width: 200px;
-    height: 30px;
+    height: 35px;
     background-color: whitesmoke;
 }
 .resultadoError{
     background-color: red;
+    height: 35px;
 }

@@ -6,6 +6,7 @@ const suma = document.getElementById("btnSumar");
 const resta = document.getElementById("btnRestar");
 const multiplicacion = document.getElementById("btnMultiplicar");
 const division = document.getElementById("btnDividir");
+const btnClear = document.getElementById("clear")
 
 let operandoUno
 let operandoDos 
@@ -15,29 +16,39 @@ sOperando.addEventListener("input", function (event) {operandoDos = sOperando.va
 
 suma.addEventListener("click" , function(){
     let resul = Number(operandoUno) + Number(operandoDos)
-    if( Number.isNaN(resul))
-    resultado.textContent = "gil"
+    if( Number.isNaN(resul)){
+    resultado.classList.add('resultadoError')
+    resultado.textContent = "Por favor, ingrese solo numeros"}
     else
-    resultado.textContent = resul
+    {
+        colorNormal()
+    resultado.textContent = resul}
 })
 resta.addEventListener("click" , function(){
     let resul = Number(operandoUno) - Number(operandoDos)
-    if( Number.isNaN(resul))
-    resultado.textContent = "gil"
-    else
-    resultado.textContent = resul
+    if( Number.isNaN(resul)){
+    resultado.classList.add('resultadoError')
+    resultado.textContent = "Por favor, ingrese solo numeros"}
+    else{
+        colorNormal()
+        resultado.textContent = resul
+    }
 })
 multiplicacion.addEventListener("click" , function(){
     let resul = Number(operandoUno) * Number(operandoDos)
-    if( Number.isNaN(resul))
-    resultado.textContent = "gil"
-    else
-    resultado.textContent = resul
+    if( Number.isNaN(resul)){
+    resultado.classList.add('resultadoError')
+    resultado.textContent = "Por favor, ingrese solo numeros"}
+    else{
+        colorNormal()
+        resultado.textContent = resul
+    }
 })
 division.addEventListener("click" , function(){
     let resul = Number(operandoUno) / Number(operandoDos)
-    if( Number.isNaN(resul))
-    resultado.textContent = "gil"
+    if( Number.isNaN(resul)){
+    resultado.classList.add('resultadoError')
+    resultado.textContent = "Por favor, ingrese solo numeros"}
     else
     {
         if(operandoDos == 0)
@@ -45,19 +56,21 @@ division.addEventListener("click" , function(){
             resultado.classList.add('resultadoError')
             resultado.textContent = "Error, no se puede dividir por 0."}
         else
-        {resultado.textContent = resul}
+        {resultado.textContent = resul
+            colorNormal()}
     
     }
 })
-
-// result = pOperando + sOperando
-// result = pOperando - sOperando
-// if(sOperando==0)
-// "Error, no se puede dividir por 0. Ingrese un valor correcto"
-// result = pOperando / sOperando
-// result = pOperando * sOperando
-// result = 10
-// result = document.getElementById("resultado")
-// result.textContent = 1
+btnClear.addEventListener("click" , function(){
+    pOperando.value = ""
+    sOperando.value = ""
+    resultado.textContent = ""
+    operandoUno = null
+    operandoDos = null
+    colorNormal()
+})
+function colorNormal(){
+    resultado.classList.remove("resultadoError")
 }
-calc();
+}
+calc()
