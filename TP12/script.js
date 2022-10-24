@@ -1,4 +1,3 @@
-function app (){
     const htmlPeso = document.getElementById("peso")
     const htmlAltura = document.getElementById("altura")
     const htmlResultado = document.getElementById("resultado")
@@ -7,21 +6,23 @@ function app (){
     let altura
     let imc
 
-    htmlPeso.addEventListener("input", function (event) {peso = htmlPeso.value})
-    htmlAltura.addEventListener("input", function (event) {altura = htmlAltura.value})
+    //htmlPeso.addEventListener("input", function (event) {peso = htmlPeso.value})
+    //htmlAltura.addEventListener("input", function (event) {altura = htmlAltura.value})
 
     //IMC = peso (kg)/ [estatura (m)]2
-    imc = peso / (altura * altura)
+    //imc = peso / (altura * altura)
     
     htmlBtnSubmit.addEventListener("click" , function(){
-        CaptarResultados ()
+        peso = htmlPeso.value
+        altura = htmlAltura.value
+        imc = peso / (altura * altura)
         htmlResultado.value = imc
+        htmlAltura.value = ""
+        htmlPeso.value = ""
     })
 
-}
-app
 
-function CaptarResultados (){
+function CaptarResultados(){
     htmlPeso.addEventListener("input", function (event) {peso = htmlPeso.value})
     htmlAltura.addEventListener("input", function (event) {altura = htmlAltura.value})
 }
