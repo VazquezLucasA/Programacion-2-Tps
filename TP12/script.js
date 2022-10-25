@@ -16,13 +16,27 @@
         peso = htmlPeso.value
         altura = htmlAltura.value
         imc = peso / (altura * altura)
-        htmlResultado.value = imc
-        htmlAltura.value = ""
-        htmlPeso.value = ""
+        
+        
+        if(Number.isNaN(imc))
+        {
+            alert("Ingrese solo números")
+            limpiar()
+            htmlResultado.value = ""
+        }
+        else{
+            htmlResultado.value = imc
+            limpiar()
+        }
     })
 
 
 function CaptarResultados(){
     htmlPeso.addEventListener("input", function (event) {peso = htmlPeso.value})
     htmlAltura.addEventListener("input", function (event) {altura = htmlAltura.value})
+}
+
+function limpiar(){
+    htmlAltura.value = ""
+    htmlPeso.value = ""
 }

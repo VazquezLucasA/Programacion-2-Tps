@@ -1,0 +1,41 @@
+*{
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    text-align: center;
+    background-color: blue;
+}
+header{
+    margin: 40px;
+}
+body button{
+    height: 30px;
+    width: 45;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: blue;
+    background-color: rgb(255, 176, 72);
+}
+
+.contenedor{
+    background-color: bisque;
+    flex-direction: column;
+    display: flex;
+    width: 60%;
+    padding-bottom: 50px;
+    border-radius: 15px;
+}
+.contenedor h1{
+    margin: 25px;
+}
+.inputs{
+    margin: 15px;
+}
+
+.btnResult{
+    margin-top: 15px;
+    margin: auto;
+    
+}
