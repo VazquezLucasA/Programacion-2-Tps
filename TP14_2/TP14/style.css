@@ -1,0 +1,21 @@
+:root{
+
+    --boca:blue;
+
+}
+body{
+    background-color: lightcoral;
+}
+
+.hola{
+    border-radius:16px;
+}
+
+.locosporelasado{
+    background-color: yellow;
+    color:var(--boca);
+    margin:50px;
+    border:10px solid var(--boca);
+    border-radius:16px;
+    padding:20px;
+}
