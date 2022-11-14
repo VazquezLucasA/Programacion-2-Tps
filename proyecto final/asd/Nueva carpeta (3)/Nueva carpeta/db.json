@@ -1,0 +1,20 @@
+{
+  "libro": [
+    {
+      "id": 1,
+      "titulo": "cien años de soledad"
+    },
+    {
+      "titulo": "el quijote de la mancha",
+      "id": 3
+    },
+    {
+      "titulo": "El Martín fierro",
+      "id": 4
+    },
+    {
+      "titulo": "El quijote de la mancha",
+      "id": 5
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "libros": [
+    {
+      "titulo": "Historia de la Selva",
+      "id": 5
+    }
+  ],
+  "alumnos": [
+    {
+      "id": 1,
+      "nombre": "juan perez"
+    },
+    {
+      "id": 2,
+      "nombre": "ariel juarez"
+    }
+  ],
+  "prestamo": []
+}

@@ -1,0 +1,32 @@
+{
+  "libros": [
+    {
+      "id": 1,
+      "titulo": "El Hibot",
+      "autor": "Froyd"
+    },
+    {
+      "id": 2,
+      "titulo": "El Habit",
+      "autor": "fraud"
+    },
+    {
+      "titulo": "ad",
+      "autor": "ad",
+      "id": 3
+    }
+  ],
+  "prestamos": [],
+  "alumnos": [
+    {
+      "id": 1,
+      "nombre": "lucas",
+      "apellido": "vazquez"
+    },
+    {
+      "id": 2,
+      "nombre": "mateo",
+      "apellido": "gonzalez"
+    }
+  ]
+}

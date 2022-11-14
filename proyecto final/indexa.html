@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="header__h1">Biblioteca Escolar</h1>
+        <nav class="header__nav">
+            <button id="btnBooks" class="header__btn"><a href="">Libro</a></button>
+            <button id="btnLend" class="header__btn"><a href="">Prestamo</a></button>
+            <button id="btnStudent" class="header__btn"><a href="">Alumno</a></button>
+        </nav>
+    </header>
+
+    <main>
+        <form id="frm" class="main__form">
+            <legend id="frmLegend" class="frm__legend">Libro</legend>
+            <label class="frm__lbl" for="inputTitle" id="lblTitle">Titulo:</label>
+            <input class="frm__input" type="text" id="inputTitle">
+
+            <label class="frm__lbl" for="inputAuthor" id="lblAuthor">Autor:</label>
+            <input class="frm__input" type="text" id="inputAuthor">
+
+            <button id="btnCreate" class="frm__btn" type="submit">Agregar</button>
+            <button id="btnEdit" class="frm__btn">Editar</button>
+            <button id="btnDelete" class="frm__btn">Eliminar</button>
+        </form>
+        <div class="main__container" id="container"></div>
+    </main>
+    <footer>
+        <h6 class="footer__h6">
+            Lucas Vazquez(55893) | Mateo González(55753) | Sergio Yalux(55757) | Trabajo Final Programación II
+        </h6>
+    </footer>
+</body>
+</html>
