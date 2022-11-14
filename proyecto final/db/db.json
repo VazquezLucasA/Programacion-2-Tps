@@ -1,0 +1,54 @@
+{
+  "libros": [
+    {
+      "id": 1,
+      "titulo": "El Hibot",
+      "autor": "Froyd"
+    },
+    {
+      "id": 2,
+      "titulo": "El Habit",
+      "autor": "fraud"
+    },
+    {
+      "titulo": "german",
+      "autor": "garmendia",
+      "id": 6
+    },
+    {
+      "titulo": "esta picada",
+      "autor": "muito111",
+      "id": 7
+    }
+  ],
+  "alumnos": [
+    {
+      "id": 1,
+      "dni": 42467088,
+      "nombre": "lucas vazquez",
+      "direccion": "av roca 2740"
+    },
+    {
+      "id": 2,
+      "dni": 44444444,
+      "nombre": "mateo gonzalez",
+      "direccion": "av salta 800"
+    }
+  ],
+  "prestamos": [
+    {
+      "id": "1",
+      "fechaEntrega": "11/11/2022",
+      "fechaDevolucion": "",
+      "libroId": "1",
+      "alumnoId": "1"
+    },
+    {
+      "id": "2",
+      "fechaEntrega": "13/11/2022",
+      "fechaDevolucion": "",
+      "libroId": "2",
+      "alumnoId": "2"
+    }
+  ]
+}

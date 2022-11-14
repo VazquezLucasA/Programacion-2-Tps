@@ -22,26 +22,20 @@ function mostrarTodosLibros(){
         });
     })
 }
-
-function guardar(){
+function guardarLibro(){
     axios.post("http://localhost:3000/libros",{titulo: inputTitle.value, autor: inputAuthor.value})
     .then(function (resultado){
         alert("dato guardado")
         mostrarTodos()
     })
 }
-
-function borrar(id){
-    globalID = id
-}
-function modificar(id){
+function modificarLibro(id){
     let endpoint = "http://localhost:3000/libros/"+globalID
     axios.put(endpoint , {titulo: inputTitle.value, autor: inputAuthor.value})
     .then((respuesta) => {
         mostrarTodosLibros()
     })
 }
-
 function editLibro(id){
     globalID = id
     // inputTitle.value = element.titulo
@@ -55,6 +49,10 @@ function eliminar(){
         mostrarTodosLibros()
     })
 }
+
+
+
+
 
 function mostrarTodosAlumnos(){
     let endpoint = "http://localhost:3000/alumnos"
