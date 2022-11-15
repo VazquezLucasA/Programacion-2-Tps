@@ -1,9 +1,9 @@
 {
   "libros": [
     {
-      "id": 1,
       "titulo": "El Hibot",
-      "autor": "Froyd"
+      "autor": "Froydf",
+      "id": 1
     },
     {
       "id": 2,
@@ -17,13 +17,38 @@
     },
     {
       "titulo": "esta picada",
-      "autor": "muito111",
+      "autor": "muito",
       "id": 7
     },
     {
-      "titulo": "asd",
-      "autor": "asd",
+      "titulo": "Harry Potter 1",
+      "autor": "jk rowling",
       "id": 8
+    },
+    {
+      "titulo": "Harry Potter 2",
+      "autor": "jk rowling",
+      "id": 9
+    },
+    {
+      "titulo": "Don Quijote de la Mancha",
+      "autor": "Miguel de Cervantes Saavedra",
+      "id": 10
+    },
+    {
+      "titulo": "El Señor de los Anillos",
+      "autor": "J. R. R. Tolkien",
+      "id": 11
+    },
+    {
+      "titulo": "El principito",
+      "autor": "Antoine de Saint-Exupéry",
+      "id": 12
+    },
+    {
+      "titulo": "Las aventuras de Alicia en el país de las maravillas",
+      "autor": "Lewis Carroll",
+      "id": 13
     }
   ],
   "alumnos": [
@@ -38,6 +63,18 @@
       "nombre": "lucas vazquez",
       "direccion": "av roca 2740",
       "id": 3
+    },
+    {
+      "dni": "43678911",
+      "nombre": "sergio yalux",
+      "direccion": "centro",
+      "id": 4
+    },
+    {
+      "dni": "28930138",
+      "nombre": "Ricardo Teseira",
+      "direccion": "rivadavia 1050",
+      "id": 5
     }
   ],
   "prestamos": [

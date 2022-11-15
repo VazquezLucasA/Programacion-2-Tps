@@ -21,20 +21,29 @@
 
     <main>
         <form id="frm" class="main__form">
-            <legend id="frmLegend" class="frm__legend">Libro</legend>
-            <label class="frm__lbl" for="inputTitle" id="lblTitle">Titulo:</label>
-            <input class="frm__input" type="text" id="inputTitle">
+            <legend id="frmLegend" class="frm__legend">Realizar prestamo</legend>
 
-            <label class="frm__lbl" for="inputAuthor" id="lblAuthor">Autor:</label>
-            <input class="frm__input" type="text" id="inputAuthor">
+            <label for="sLibros">Libro</label>
+            <select name="selectLibro" id="sLibros">
+                <option value="value1">Value 1</option>
+                <option value="value2">Value 2</option>
+                <option value="value3">Value 3</option>
+            </select>
 
-            <button id="btnCreate" class="frm__btn" type="submit">Agregar</button>
-            <button id="btnEdit" class="frm__btn">Editar</button>
-            <button id="btnDelete" class="frm__btn">Eliminar</button>
+            <label for="sAlumno">Alumno</label>
+            <select name="selectAlumno" id="sAlumnos">
+                <option value="value1">Value 1</option>
+                <option value="value2">Value 2</option>
+                <option value="value3">Value 3</option>
+            </select>
+
+
+
+            <button id="btnLend" class="frm__btn" type="submit">Prestar</button>
         </form>
         <div class="main__container" id="container">
             <table border="1" class="tabla" id="tabla">
-                <caption>libros</caption>
+                <caption>libros prestados</caption>
                 <thead>
                     <th>libro</th>
                     <th>autor</th>
