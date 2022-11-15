@@ -19,30 +19,28 @@
       "titulo": "esta picada",
       "autor": "muito111",
       "id": 7
+    },
+    {
+      "titulo": "asd",
+      "autor": "asd",
+      "id": 8
     }
   ],
   "alumnos": [
-    {
-      "id": 1,
-      "dni": 42467088,
-      "nombre": "lucas vazquez",
-      "direccion": "av roca 2740"
-    },
     {
       "id": 2,
       "dni": 44444444,
       "nombre": "mateo gonzalez",
       "direccion": "av salta 800"
+    },
+    {
+      "dni": "42467088",
+      "nombre": "lucas vazquez",
+      "direccion": "av roca 2740",
+      "id": 3
     }
   ],
   "prestamos": [
-    {
-      "id": "1",
-      "fechaEntrega": "11/11/2022",
-      "fechaDevolucion": "",
-      "libroId": "1",
-      "alumnoId": "1"
-    },
     {
       "id": "2",
       "fechaEntrega": "13/11/2022",

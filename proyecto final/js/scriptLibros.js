@@ -24,7 +24,7 @@ function mostrarTodosLibros(){
         respuesta.data.forEach(element => {
         containerLibros.innerHTML +=  '<button class="frm__btn" onclick="eliminarLibro('+element.id+')">ELIMINAR</button>' + '<button class="frm__btn" onclick="modificarLibro('+element.id+')">EDITAR</button>' +  element.titulo + ", " +  element.autor + ". "  + "<br>" }); 
 
-        //
+        //'<tr> <td>< <button class="frm__btn" onclick="eliminarLibro('+element.id+')">ELIMINAR</button>' + '<button class="frm__btn" onclick="modificarLibro('+element.id+')">EDITAR</button>' +  element.titulo + ", " +  element.autor + ". "})</tr>
 
     })
 }
@@ -32,7 +32,7 @@ function guardarLibro(){
     axios.post("http://localhost:3000/libros",{titulo: inputTitle.value, autor: inputAuthor.value})
     .then(function (resultado){
         alert("dato guardado")
-        mostrarTodos()
+        mostrarTodosLibros()
     })
 }
 

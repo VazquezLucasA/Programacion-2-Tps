@@ -1,4 +1,4 @@
-const inputDNI = document.getElementById("inputDNI")
+const inputDni = document.getElementById("inputDNI")
 const inputName = document.getElementById("inputName")
 const inputAdress = document.getElementById("inputAdress")
 
@@ -6,56 +6,57 @@ const btnCreate = document.getElementById("btnCreate")
 const btnEdit = document.getElementById("btnEdit")
 const btnDelete = document.getElementById("btnDelete")
 const container = document.getElementById("container")
+
 let globalID
+let auxiliar
 
-btnEdit.hidden = false
+btnEdit.hidden = true
 
-btnCreate.addEventListener("click" , guardarLibro)
-btnEdit.addEventListener("click" , actualizarLibro)
+btnCreate.addEventListener("click" , guardarAlumno)
+btnEdit.addEventListener("click" , actualizarAlumno)
 //btnDelete.addEventListener("click" , eliminar)
 
-function mostrarTodosLibros(){
-    let endpoint = "http://localhost:3000/libros"
+function mostrarTodosAlumnos(){
+    let endpoint = "http://localhost:3000/alumnos"
     axios.get(endpoint)
     .then(function (respuesta) {
-        containerLibros.innerHTML=""
+        container.innerHTML=""
         respuesta.data.forEach(element => {
-        containerLibros.innerHTML +=  '<button class="frm__btn" onclick="eliminarLibro('+element.id+')">ELIMINAR</button>' + '<button class="frm__btn" onclick="modificarLibro('+element.id+')">EDITAR</button>' +  element.titulo + ", " +  element.autor + ". "  + "<br>" }); 
-
-        //
+        container.innerHTML +=  '<button class="frm__btn" onclick="eliminarAlumno('+element.id+')">ELIMINAR</button>' + '<button class="frm__btn" onclick="modificarAlumno('+element.id+')">EDITAR</button>' +  element.dni + ", " +  element.nombre + ". " + element.direccion + "<br>" }); 
 
     })
 }
-function guardarLibro(){
-    axios.post("http://localhost:3000/libros",{titulo: inputTitle.value, autor: inputAuthor.value})
+function guardarAlumno(){
+    axios.post("http://localhost:3000/alumnos",{dni: inputDni.value, nombre: inputName.value, direccion: inputAdress.value})
     .then(function (resultado){
         alert("dato guardado")
-        mostrarTodos()
+        mostrarTodosAlumnos()
     })
 }
 
-async function modificarLibro(id) {
+async function modificarAlumno(id) {
     btnCreate.hidden = true
     btnEdit.hidden = false
     auxiliar = id
-    resp = await axios.get("http://localhost:3000/libros/" + id)
-    inputTitle.value = resp.data.titulo
-    inputAuthor.value = resp.data.autor
+    resp = await axios.get("http://localhost:3000/alumnos/" + id)
+    inputDni.value = resp.data.dni
+    inputName.value = resp.data.nombre
+    inputAdress.value = resp.data.direccion
 }
 
-async function actualizarLibro() {
+async function actualizarAlumno() {
     btnCreate.hidden = true;
     btnEdit.hidden = false;
-    resp = await axios.put("http://localhost:3000/libros/" + auxiliar, { titulo: inputTitle.value, autor: inputAuthor.value })
+    resp = await axios.put("http://localhost:3000/alumnos/" + auxiliar, {dni: inputDni.value, nombre: inputName.value, direccion: inputAdress.value})
 }
 
 
-function eliminarLibro(id){
-    let endpoint = "http://localhost:3000/libros/"+id
+function eliminarAlumno(id){
+    let endpoint = "http://localhost:3000/alumnos/"+id
     axios.delete(endpoint)
     .then(function (res){
-        mostrarTodosLibros()
+        mostrarTodosAlumnos()
     })
 }
-mostrarTodosLibros()
+mostrarTodosAlumnos()
 
