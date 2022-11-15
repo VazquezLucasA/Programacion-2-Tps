@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/scriptAlumnos.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
@@ -14,7 +14,7 @@
         <h1 class="header__h1">Biblioteca Escolar</h1>
         <nav class="header__nav">
             <button id="btnBooks" class="header__btn"><a href="libros.html">Libro</a></button>
-            <button id="btnLend" class="header__btn"><a href="index.html">Home</a></button>
+            <button id="btnLend" class="header__btn"><a href="../index.html">Home</a></button>
             <button id="btnStudent" class="header__btn"><a href="alumnos.html">Alumno</a></button>
         </nav>
     </header>
@@ -22,28 +22,32 @@
     <main>
         <form id="frm" class="main__form">
             <legend id="frmLegend" class="frm__legend">Libro</legend>
-            <label class="frm__lbl" for="inputTitle" id="lblTitle">Titulo:</label>
-            <input class="frm__input" type="text" id="inputTitle">
+            <label class="frm__lbl" for="inputDni" id="lblDni">DNI:</label>
+            <input class="frm__input" type="text" id="inputDNI">
 
-            <label class="frm__lbl" for="inputAuthor" id="lblAuthor">Autor:</label>
-            <input class="frm__input" type="text" id="inputAuthor">
+            <label class="frm__lbl" for="inputName" id="lblName">Nombre:</label>
+            <input class="frm__input" type="text" id="inputName">
+
+            <label class="frm__lbl" for="inputAdress" id="lblAdress">Direccion:</label>
+            <input class="frm__input" type="text" id="inputAdress">
 
             <button id="btnCreate" class="frm__btn" type="submit">Agregar</button>
             <button id="btnEdit" class="frm__btn">Editar</button>
-            <button id="btnDelete" class="frm__btn">Eliminar</button>
+            <!-- <button id="btnDelete" class="frm__btn">Eliminar</button> -->
         </form>
         <div class="main__container" id="container">
-            <table border="1" class="tabla">
-                <caption>libros</caption>
-                <thead>
-                    <th>libro</th>
-                    <th>autor</th>
-                    <th>fecha prestamo</th>
-                    <th>fecha devolucion</th>
-                    <th>Alumno</th>
-                    <th>estado</th>
-                    <th>&nbsp;</th>
+            <table border="1" class="container__table">
+                <caption>Alumnos</caption>
+                <thead class="table__head">
+                    <th>DNI</th>
+                    <th>Nombre</th>
+                    <th>Direccion</th>
                 </thead>
+                <tbody class="table__body" id="tableBody">
+                    
+                    
+                </tbody>
+            </table>
     </main>
     <footer>
         <h6 class="footer__h6">

@@ -1,16 +1,14 @@
-const inputTitle = document.getElementById("inputTitle")
-const inputAuthor = document.getElementById("inputAuthor")
+const inputDNI = document.getElementById("inputDNI")
+const inputName = document.getElementById("inputName")
+const inputAdress = document.getElementById("inputAdress")
 
 const btnCreate = document.getElementById("btnCreate")
 const btnEdit = document.getElementById("btnEdit")
 const btnDelete = document.getElementById("btnDelete")
-
-const containerLibros = document.getElementById("containerLibros")
-
+const container = document.getElementById("container")
 let globalID
-let auxiliar
 
-btnEdit.hidden = true
+btnEdit.hidden = false
 
 btnCreate.addEventListener("click" , guardarLibro)
 btnEdit.addEventListener("click" , actualizarLibro)
@@ -60,13 +58,4 @@ function eliminarLibro(id){
     })
 }
 mostrarTodosLibros()
-
-
-
-
-
-
-
-
-
 
