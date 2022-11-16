@@ -24,14 +24,14 @@
             <legend id="frmLegend" class="frm__legend">Realizar prestamo</legend>
 
             <label for="sLibros">Libro</label>
-            <select name="selectLibro" id="sLibros">
+            <select name="selectLibro" id="sLibros" class="frm__select">
                 <option value="value1">Value 1</option>
                 <option value="value2">Value 2</option>
                 <option value="value3">Value 3</option>
             </select>
 
             <label for="sAlumno">Alumno</label>
-            <select name="selectAlumno" id="sAlumnos">
+            <select name="selectAlumno" id="sAlumnos" class="frm__select">
                 <option value="value1">Value 1</option>
                 <option value="value2">Value 2</option>
                 <option value="value3">Value 3</option>
@@ -42,8 +42,10 @@
             <button id="btnLend" class="frm__btn">Prestar</button>
         </div>
         <div class="main__container" id="container">
-            <table border="1" class="tabla" id="tabla">
-                <caption>libros prestados</caption>
+            <h2 class="container__h2">Lista de Prestamos </h2>
+
+            <!-- <table border="1" class="tabla" id="tabla">
+                <h1 class="table__h1">libros prestados</h1>
                 <thead>
                     <th>libro</th>
                     <th>autor</th>
@@ -53,7 +55,9 @@
                     <th>estado</th>
 
                 </thead>
-            </table>
+            </table> -->
+
+            
         </div>
     </main>
     <footer>
