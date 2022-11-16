@@ -1,4 +1,4 @@
-const container = document.getElementById("container")
+const container = document.getElementById("tableBody")
 const sLibros = document.getElementById("sLibros")
 const sAlumnos = document.getElementById("sAlumnos")
 const btnLend = document.getElementById("btnLend")
@@ -21,15 +21,25 @@ async function listar() {
         prestamo [2] = element.fechaEntrega //fecha entrega
         prestamo [3] = element.fechaDevolucion //fecha devolucion
 
-        let nombre = getAlumno(prestamo)
+        let nombreAlumno = getAlumno(prestamo)
         //console.log(prestamo[1])
+        let tituloLibro = getLibro(prestamo)
 
         container.innerHTML +=
-            '<button onclick="borrar(' + element.id + ')">borrar</button>' +
-            '<button onclick="mostrar('+element.id+')">editar</button>' + " " + element.alumnoId+ " " + element.libroId+ " " + element.fechaEntrega+ " " + element.fechaDevolucion+ " " + "<br>";
+            '<button onclick="borrar(' + element.id + ')">borrar</button>' + '<button onclick="mostrar('+element.id+')">editar</button>' + " " + element.alumnoId+ " " + element.libroId+ " " + element.fechaEntrega+ " " + element.fechaDevolucion+ " " + "<br>";
 
     });
 }
+
+
+
+async function getLibro(prestamo){
+    resp = await axios.get("http://localhost:3000/libros/"+prestamo[1])
+
+    return JSON.stringify(resp.data.titulo)
+
+}
+
 
 
 async function getAlumno(prestamo){
