@@ -22,8 +22,11 @@ function mostrarTodosAlumnos(){
     .then(function (respuesta) {
         container.innerHTML=""
         respuesta.data.forEach(element => {
-        container.innerHTML +=  '<button class="frm__btn" onclick="eliminarAlumno('+element.id+')">ELIMINAR</button>' + '<button class="frm__btn" onclick="modificarAlumno('+element.id+')">EDITAR</button>' +  element.dni + ", " +  element.nombre + ". " + element.direccion + "<br>" }); 
-
+        container.innerHTML +=  '<button class="frm__btn" onclick="eliminarAlumno('+element.id+')">ELIMINAR</button>' + '<button class="frm__btn" onclick="modificarAlumno('+element.id+')">EDITAR</button>' +  element.dni + ", " +  element.nombre + ". " + element.direccion + "<br>" 
+        //'<tr> <td>'+ element.dni + '</td> <td>' +  element.nombre +'</td> <td>'+element.direccion+'</td> <td><button class="frm__btn" onclick="eliminarAlumno('+element.id+')">ELIMINAR</button></td> <td><button class="frm__btn" onclick="modificarAlumno('+element.id+')">EDITAR</button> </td> </tr>'
+        
+        })
+        
     })
 }
 function guardarAlumno(){

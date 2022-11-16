@@ -22,9 +22,11 @@ function mostrarTodosLibros(){
     .then(function (respuesta) {
         containerLibros.innerHTML=""
         respuesta.data.forEach(element => {
-        containerLibros.innerHTML +=  '<button class="frm__btn" onclick="eliminarLibro('+element.id+')">ELIMINAR</button>' + '<button class="frm__btn" onclick="modificarLibro('+element.id+')">EDITAR</button>' +  element.titulo + ", " +  element.autor + ". "  + "<br>" }); 
+        containerLibros.innerHTML +=  '<button class="frm__btn" onclick="eliminarLibro('+element.id+')">ELIMINAR</button>' + '<button class="frm__btn" onclick="modificarLibro('+element.id+')">EDITAR</button>' +  element.titulo + ", " +  element.autor + ". "  + "<br>" 
+        //'<tr> <td>'+ element.titulo + '</td> <td>' +  element.autor +'</td> <td><button class="frm__btn" onclick="eliminarLibro('+element.id+')">ELIMINAR</button></td> <td><button class="frm__btn" onclick="modificarLibro('+element.id+')">EDITAR</button> </td> </tr>'
+    
+        })
 
-        //'<tr> <td></td> <td></td> <td></td> <td><button class="frm__btn" onclick="eliminarLibro('+element.id+')">ELIMINAR</button></td> ' + '<button class="frm__btn" onclick="modificarLibro('+element.id+')">EDITAR</button>' +  element.titulo + ", " +  element.autor + ". "})</tr>
 
     })
 }
