@@ -103,7 +103,12 @@ main{
     margin: 10px;
     border-radius: 16px;
 }
+.frm__btn--devuelto{
 
+    background-color:brown;
+    color:whitesmoke;
+
+}
 .main__container{
 
 background-color: var(--color1);

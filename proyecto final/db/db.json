@@ -35,38 +35,43 @@
       "autor": "Lewis Carroll",
       "id": 6,
       "prestado": false
+    },
+    {
+      "titulo": "El alquimista ",
+      "autor": "Paulo Coelho",
+      "prestado": false,
+      "id": 7
+    },
+    {
+      "titulo": "123",
+      "prestado": true,
+      "autor": "123",
+      "id": 8
+    },
+    {
+      "titulo": "asdasd",
+      "prestado": true,
+      "autor": "123",
+      "id": 9
     }
   ],
   "prestamos": [
-    {
-      "id": 1,
-      "alumnoId": 1,
-      "libroId": 1,
-      "fechaDevolucion": "",
-      "fechaEntrega": "20/12/2022"
-    },
-    {
-      "id": 2,
-      "alumnoId": 1,
-      "libroId": 2,
-      "fechaDevolucion": "",
-      "fechaEntrega": "20/12/2022"
-    },
     {
       "id": 3,
       "alumnoId": 7,
       "libroId": 3,
       "fechaDevolucion": "",
       "fechaEntrega": "20/12/2022"
+    },
+    {
+      "alumnoId": "8",
+      "libroId": "8",
+      "fechaEntrega": "16/11/2022",
+      "fechaDevolucion": "",
+      "id": 4
     }
   ],
   "alumnos": [
-    {
-      "id": 1,
-      "dni": 44444444,
-      "nombre": "mateo gonzalez",
-      "direccion": "av salta 800"
-    },
     {
       "dni": "42467088",
       "nombre": "lucas vazquez",
@@ -90,6 +95,12 @@
       "nombre": "asd",
       "direccion": "asd",
       "id": 7
+    },
+    {
+      "dni": "45123123",
+      "nombre": "mateo gonzalez",
+      "direccion": "av salta 800",
+      "id": 8
     }
   ]
 }

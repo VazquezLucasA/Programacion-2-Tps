@@ -9,23 +9,24 @@ mostrarTodosLibros()
 mostrarAlumnos()
 
 let test
-
 btnLend.addEventListener("click" , prestar)
 
-//|||||||||||||||||||||||
+
 async function listar() {
     resp = await axios.get("http://localhost:3000/prestamos")
     container.innerHTML = ""
     resp.data.reverse().forEach(element => {
-        // let prestamo = []
-        // prestamo [0]= element.alumnoId //alumno
-        // prestamo [1]= element.libroId //libro
-        // prestamo [2] = element.fechaEntrega //fecha entrega
-        // prestamo [3] = element.fechaDevolucion //fecha devolucion
-        // let nombre = getAlumno(prestamo)
-        container.innerHTML +=
-            '<button class="frm__btn" onclick="devolver('+element.id+')">Devolver</button>' + " " + element.alumnoId+ " " + element.libroId+ " " + element.fechaEntrega+ " " + element.fechaDevolucion+ " " + "<br>"
+        if(element.fechaDevolucion == "")
+        {
+            container.innerHTML +=
+            '<button class="frm__btn " onclick="devolver('+element.id+')">Devolver</button>' + " " + element.alumnoId+ " " + element.libroId+ " " + element.fechaEntrega+ " " + element.fechaDevolucion+ " " + "<br>"
 
+        }
+        else{
+            container.innerHTML +=
+            '<button class="frm__btn frm__btn--devuelto">DEVUELTO</button>' + " " + element.alumnoId+ " " + element.libroId+ " " + element.fechaEntrega+ " " + element.fechaDevolucion+ " " + "<br>"
+
+        }
     })
 }
 
@@ -37,8 +38,13 @@ async function getAlumno(prestamo){
     return resp.data.nombre
 }
 
- 
-
+ async function devolver(id) {
+    let endpoint = "http://localhost:3000/prestamos/" + id
+    axios.get(endpoint)
+    .then(async function(res){
+        resp = await axios.put(endpoint, {alumnoId: res.data.alumnoId, libroId: res.data.libroId, fechaEntrega: res.data.fechaEntrega, fechaDevolucion: 1})
+    })
+}
 
 
 
@@ -51,7 +57,7 @@ function mostrarTodosLibros(){
 
         respuesta.data.forEach(element => {
             if(!element.prestado)
-            sLibros.innerHTML += '<option value="('+element.id+')">'+element.titulo+'</option>'
+            sLibros.innerHTML += '<option value="'+element.id+'">'+element.titulo+'</option>'
     })
 }
 )}
@@ -62,7 +68,7 @@ function mostrarAlumnos(){
     .then(function (respuesta) {
         sAlumnos.innerHTML=""
         respuesta.data.forEach(element => {
-        sAlumnos.innerHTML += '<option value="('+element.id+')">'+element.nombre+'</option>'
+        sAlumnos.innerHTML += '<option value="'+element.id+'">'+element.nombre+'</option>'
         //console.log(element.nombre)
     })
 }
@@ -73,19 +79,21 @@ function prestar(){
     console.log(test)
     let alumnoPrestamo = sAlumnos.options[sAlumnos.selectedIndex].value
     let libroPrestado = sLibros.options[sLibros.selectedIndex].value
+    
     //console.log(alumnoPrestamo, libroPrestado)
 
     //nuevo prestamo, post
-    guardarPrestamo(alumnoPrestamo, libroPrestado, hoy)
     //nuevo prestamo, date
-    //cambiar estado prestado a libro, put
+    guardarPrestamo(alumnoPrestamo, libroPrestado, hoy)
     
+    //cambiar estado prestado a libro, put ||||||||||||||||||||||||||||
+    estadoPrestado(libroPrestado, true)
     
 }
 
 function guardarPrestamo(pibe, librito, hoy) {
     test = 12
-    axios.post("http://localhost:3000/prestamos", {alumnoId: pibe, libroId: librito, fechaEntrega: hoy.toLocaleDateString(), fechaDevolucion:""})
+    axios.post("http://localhost:3000/prestamos/", {alumnoId: pibe, libroId: librito, fechaEntrega: hoy.toLocaleDateString(), fechaDevolucion:""})
     .then(function(resultado){
         alert("viva la pepa")
         listar()
@@ -103,3 +111,16 @@ function guardarLibro(){
     })
 }
 
+
+//|||||||||||||||||||||||||||||||
+ function estadoPrestado(id , estado) {
+    
+    let endpoint = "http://localhost:3000/libros/" + id
+    axios.get(endpoint)
+    .then(async function(res){
+
+     axios.put("http://localhost:3000/libros/" +id,  {titulo: res.data.titulo, prestado: estado, autor: res.data.autor})
+     .then(function(resp){
+        alert("viva la pepa")
+     })})
+}
