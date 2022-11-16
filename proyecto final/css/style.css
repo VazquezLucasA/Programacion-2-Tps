@@ -120,8 +120,10 @@ top: 50%;
 transform: translate(0, -50%);
 
 float: left;
-
+transition:0.5s;
 }
+
+
 .container__table{
     margin: auto;
     text-align: center;

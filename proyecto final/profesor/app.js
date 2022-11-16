@@ -62,7 +62,7 @@ async function actualizar() {
 async function LibroEstaPrestado(id) {
     resp = axios.get("http://localhost:3000/prestamos")
     array.forEach(element => {
-        if (element.libroId == id && element.fecchadevolucion == "") {
+        if (element.libroId == id && element.fechadevolucion == null) {
             return true
         }
     })

@@ -1,59 +1,68 @@
 {
   "libros": [
     {
-      "titulo": "El Hibot",
-      "autor": "Froydf",
-      "id": 1
-    },
-    {
-      "id": 2,
-      "titulo": "El Habit",
-      "autor": "fraud"
-    },
-    {
-      "titulo": "german",
-      "autor": "garmendia",
-      "id": 6
-    },
-    {
-      "titulo": "esta picada",
-      "autor": "muito",
-      "id": 7
-    },
-    {
       "titulo": "Harry Potter 1",
       "autor": "jk rowling",
-      "id": 8
+      "id": 1,
+      "prestado": true
     },
     {
       "titulo": "Harry Potter 2",
       "autor": "jk rowling",
-      "id": 9
+      "id": 2,
+      "prestado": true
     },
     {
       "titulo": "Don Quijote de la Mancha",
       "autor": "Miguel de Cervantes Saavedra",
-      "id": 10
+      "id": 3,
+      "prestado": true
     },
     {
       "titulo": "El Señor de los Anillos",
       "autor": "J. R. R. Tolkien",
-      "id": 11
+      "id": 4,
+      "prestado": false
     },
     {
       "titulo": "El principito",
       "autor": "Antoine de Saint-Exupéry",
-      "id": 12
+      "id": 5,
+      "prestado": false
     },
     {
       "titulo": "Las aventuras de Alicia en el país de las maravillas",
       "autor": "Lewis Carroll",
-      "id": 13
+      "id": 6,
+      "prestado": false
+    }
+  ],
+  "prestamos": [
+    {
+      "id": 1,
+      "alumnoId": 1,
+      "libroId": 1,
+      "fechaDevolucion": "",
+      "fechaEntrega": "20/12/2022"
+    },
+    {
+      "id": 2,
+      "alumnoId": 1,
+      "libroId": 2,
+      "fechaDevolucion": "",
+      "fechaEntrega": "20/12/2022"
+    },
+    {
+      "id": 3,
+      "alumnoId": 7,
+      "libroId": 3,
+      "fechaDevolucion": "",
+      "fechaEntrega": "20/12/2022"
     }
   ],
   "alumnos": [
     {
-      "id": 2,
+      "id": 1,
       "dni": 44444444,
       "nombre": "mateo gonzalez",
       "direccion": "av salta 800"
@@ -62,28 +71,25 @@
       "dni": "42467088",
       "nombre": "lucas vazquez",
       "direccion": "av roca 2740",
-      "id": 3
+      "id": 2
     },
     {
       "dni": "43678911",
       "nombre": "sergio yalux",
       "direccion": "centro",
-      "id": 4
+      "id": 3
     },
     {
       "dni": "28930138",
       "nombre": "Ricardo Teseira",
       "direccion": "rivadavia 1050",
-      "id": 5
-    }
-  ],
-  "prestamos": [
+      "id": 4
+    },
     {
-      "id": "2",
-      "fechaEntrega": "13/11/2022",
-      "fechaDevolucion": "",
-      "libroId": "2",
-      "alumnoId": "2"
+      "dni": "7",
+      "nombre": "asd",
+      "direccion": "asd",
+      "id": 7
     }
   ]
 }
