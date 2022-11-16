@@ -22,7 +22,25 @@ function mostrarTodosLibros(){
     .then(function (respuesta) {
         containerLibros.innerHTML=""
         respuesta.data.forEach(element => {
-        containerLibros.innerHTML +=  '<button class="frm__btn" onclick="eliminarLibro('+element.id+')">ELIMINAR</button>' + '<button class="frm__btn" onclick="modificarLibro('+element.id+')">EDITAR</button>' +  element.titulo + ", " +  element.autor + ". "  + "<br>" 
+
+            if (element.prestado){
+                
+                containerLibros.innerHTML +=  '<button class="frm__btn" onclick="eliminarLibro('+element.id+')">ELIMINAR</button>' + '<button class="frm__btn" onclick="modificarLibro('+element.id+')">EDITAR</button>' +  element.titulo + ", " +  element.autor + ", "+  "PRESTADO." + "<br>" 
+
+            }else{
+                containerLibros.innerHTML +=  '<button class="frm__btn" onclick="eliminarLibro('+element.id+')">ELIMINAR</button>' + '<button class="frm__btn" onclick="modificarLibro('+element.id+')">EDITAR</button>' +  element.titulo + ", " +  element.autor + ", "+  "DISPONIBLE." + "<br>" 
+
+            }
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
         //'<tr> <td>'+ element.titulo + '</td> <td>' +  element.autor +'</td> <td><button class="frm__btn" onclick="eliminarLibro('+element.id+')">ELIMINAR</button></td> <td><button class="frm__btn" onclick="modificarLibro('+element.id+')">EDITAR</button> </td> </tr>'
     
         })
@@ -31,7 +49,7 @@ function mostrarTodosLibros(){
     })
 }
 function guardarLibro(){
-    axios.post("http://localhost:3000/libros",{titulo: inputTitle.value, autor: inputAuthor.value})
+    axios.post("http://localhost:3000/libros",{titulo: inputTitle.value, autor: inputAuthor.value, prestado: false})
     .then(function (resultado){
         alert("dato guardado")
         mostrarTodosLibros()
@@ -56,16 +74,34 @@ async function actualizarLibro() {
 
 function eliminarLibro(id){
     let endpoint = "http://localhost:3000/libros/"+id
-    axios.delete(endpoint)
-    .then(function (res){
-        mostrarTodosLibros()
+    axios.get(endpoint)
+
+    .then(function(resultado){
+        if(!resultado.data.prestado){
+            axios.delete(endpoint)
+            .then(function (res){
+            mostrarTodosLibros()})
+            alert("viva la pepa")
+        }
+        else
+        alert("no se puede eliminar un libro prestado")
     })
 }
+
+function comprobarEstado(prestado){
+
+    if (prestado){
+
+        return "viva la pepa"
+
+    }else{
+
+    }
+
+
+}
+
 mostrarTodosLibros()
-
-
-
-
 
 
 

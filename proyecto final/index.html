@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/scriptHome.js" defer></script>
+    <script src="./js/scriptPrestamos.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
@@ -14,13 +14,13 @@
         <h1 class="header__h1">Biblioteca Escolar</h1>
         <nav class="header__nav">
             <button id="btnBooks" class="header__btn"><a href="./pages/libros.html">Libro</a></button>
-            <button id="btnLend" class="header__btn"><a href="index.html">Home</a></button>
+            <button id="btnLending" class="header__btn"><a href="index.html">Prestamos</a></button>
             <button id="btnStudent" class="header__btn"><a href="./pages/alumnos.html">Alumno</a></button>
         </nav>
     </header>
 
     <main>
-        <form id="frm" class="main__form">
+        <div id="frm" class="main__form">
             <legend id="frmLegend" class="frm__legend">Realizar prestamo</legend>
 
             <label for="sLibros">Libro</label>
@@ -39,10 +39,10 @@
 
 
 
-            <button id="btnLend" class="frm__btn" type="submit">Prestar</button>
-        </form>
-        <div class="main__container">
-            <table border="1" class="container__table">
+            <button id="btnLend" class="frm__btn">Prestar</button>
+        </div>
+        <div class="main__container" id="container">
+            <table border="1" class="tabla" id="tabla">
                 <caption>libros prestados</caption>
                 <thead>
                     <th>libro</th>
@@ -53,9 +53,6 @@
                     <th>estado</th>
 
                 </thead>
-                <tbody class="table__body" id="tableBody">
-
-                </tbody>
             </table>
         </div>
     </main>
