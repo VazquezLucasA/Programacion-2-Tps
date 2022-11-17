@@ -3,7 +3,7 @@
     {
       "titulo": "Harry Potter 1",
       "autor": "JK Rowling",
-      "prestado": true,
+      "prestado": false,
       "id": 1
     },
     {
@@ -26,7 +26,7 @@
     },
     {
       "titulo": "El alquimista ",
-      "prestado": true,
+      "prestado": false,
       "autor": "Paulo Coelho",
       "id": 5
     }
