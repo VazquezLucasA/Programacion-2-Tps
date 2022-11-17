@@ -8,7 +8,7 @@
     },
     {
       "titulo": "Don Quijote de la Mancha",
-      "prestado": false,
+      "prestado": true,
       "autor": "Miguel de Cervantes Saavedra",
       "id": 2
     },
@@ -26,8 +26,8 @@
     },
     {
       "titulo": "El alquimista ",
+      "prestado": true,
       "autor": "Paulo Coelho",
-      "prestado": false,
       "id": 5
     }
   ],
@@ -62,7 +62,7 @@
     },
     {
       "alumnoId": "1",
-      "libroId": "1",
+      "libroId": "2",
       "fechaEntrega": "17/11/2022",
       "fechaDevolucion": "",
       "id": 5

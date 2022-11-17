@@ -103,7 +103,7 @@ function guardarPrestamo(pibe, librito, hoy)
 {
     axios.post("http://localhost:3000/prestamos/", {alumnoId: pibe, libroId: librito, fechaEntrega: hoy.toLocaleDateString(), fechaDevolucion:""})
     .then(function(resultado){
-        alert("viva la pepa")
+        alert("libro prestado")
         listar()
     })
 }
