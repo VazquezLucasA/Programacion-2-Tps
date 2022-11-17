@@ -2,7 +2,6 @@ const container = document.getElementById("container")
 const sLibros = document.getElementById("sLibros")
 const sAlumnos = document.getElementById("sAlumnos")
 const btnLend = document.getElementById("btnLend")
-const sAlumnosOp = document.getElementById("sAlumnos").value
 
 listar()
 mostrarTodosLibros()
@@ -19,38 +18,25 @@ async function listar() {
     
     resp.data.reverse().forEach(async (element) => {
         let alumno
-        let nombre
+        let libro
         alumno = await getAlumno(element.alumnoId)
-        nombre = await getLibro(element.libroId)
-
-        console.log(alumno)
-        console.log(nombre)
+        libro = await getLibro(element.libroId)
 
         if(element.fechaDevolucion == "")
         {
             
             container.innerHTML +=
-            '<button class="frm__btn " onclick="devolver('+element.id+')">Devolver</button>' + " " + alumno + " " + nombre + " " + element.fechaEntrega+ " " + element.fechaDevolucion+ " " + "<hr>"
+            '<button class="frm__btn " onclick="devolver('+element.id+')">Devolver</button>' + " " + alumno + ", " + libro + ". " + element.fechaEntrega+ " - " + element.fechaDevolucion+ " " + "<hr>"
 
         }
         else{
             container.innerHTML +=
-            '<button class="frm__btn frm__btn--devuelto">DEVUELTO</button>' + " " + alumno + " " + nombre + " " + element.fechaEntrega+ " " + element.fechaDevolucion+ " " + "<hr>"
+            '<button class="frm__btn frm__btn--devuelto">DEVUELTO</button>' + " " + alumno + ", " + libro + ". " + element.fechaEntrega+ " - " + element.fechaDevolucion+ " " + "<hr>"
 
         }
     })
 }
 
-//
-// axios.get("http://localhost:3000/alumnos/"+element.alumnoId)
-//         .then(function(res){
-//             alumno = res.data.nombre
-//         })
-//         axios.get("http://localhost:3000/libros/"+element.libroId)
-//         .then(function(res){
-//             nombre = res.data.titulo
-//         })
-//
 async function getAlumno(id){
     resp = await axios.get("http://localhost:3000/alumnos/"+id)
     return resp.data.nombre
@@ -94,47 +80,34 @@ function mostrarAlumnos(){
         sAlumnos.innerHTML=""
         respuesta.data.forEach(element => {
         sAlumnos.innerHTML += '<option value="'+element.id+'">'+element.nombre+'</option>'
-        //console.log(element.nombre)
     })
 }
 )}
 
 function prestar(){
     const hoy = new Date()
-    console.log(test)
+
     let alumnoPrestamo = sAlumnos.options[sAlumnos.selectedIndex].value
     let libroPrestado = sLibros.options[sLibros.selectedIndex].value
-    
-    //console.log(alumnoPrestamo, libroPrestado)
 
     //nuevo prestamo, post
     //nuevo prestamo, date
     guardarPrestamo(alumnoPrestamo, libroPrestado, hoy)
     
-    //cambiar estado prestado a libro, put ||||||||||||||||||||||||||||
+    //cambiar estado prestado a libro, put
     estadoPrestado(libroPrestado, true)
     
 }
 
-function guardarPrestamo(pibe, librito, hoy) {
-    test = 12
+function guardarPrestamo(pibe, librito, hoy) 
+{
     axios.post("http://localhost:3000/prestamos/", {alumnoId: pibe, libroId: librito, fechaEntrega: hoy.toLocaleDateString(), fechaDevolucion:""})
     .then(function(resultado){
         alert("viva la pepa")
         listar()
-        console.log(3)
-    }
-    )
-}
-
-function guardarLibro(){
-    
-    axios.post("http://localhost:3000/libros",{titulo: inputTitle.value, autor: inputAuthor.value, prestado: false})
-    .then(function (resultado){
-        alert("dato guardado")
-        mostrarTodosLibros()
     })
 }
+
 
  function estadoPrestado(id , estado) {
     
@@ -143,7 +116,5 @@ function guardarLibro(){
     .then(async function(res){
 
      axios.put("http://localhost:3000/libros/" +id,  {titulo: res.data.titulo, prestado: estado, autor: res.data.autor})
-     .then(function(resp){
-        alert("viva la pepa")
-     })})
+     .then(function(resp){})})
 }

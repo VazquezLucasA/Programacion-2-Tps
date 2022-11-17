@@ -2,45 +2,33 @@
   "libros": [
     {
       "titulo": "Harry Potter 1",
+      "autor": "JK Rowling",
       "prestado": true,
-      "autor": "jk rowling",
       "id": 1
     },
     {
-      "titulo": "Harry Potter 2",
-      "autor": "jk rowling",
-      "id": 2,
-      "prestado": false
-    },
-    {
       "titulo": "Don Quijote de la Mancha",
-      "prestado": true,
+      "prestado": false,
       "autor": "Miguel de Cervantes Saavedra",
-      "id": 3
+      "id": 2
     },
     {
       "titulo": "El Señor de los Anillos",
       "prestado": false,
       "autor": "J. R. R. Tolkien",
-      "id": 4
+      "id": 3
     },
     {
       "titulo": "El principito",
       "prestado": false,
       "autor": "Antoine de Saint-Exupéry",
-      "id": 5
-    },
-    {
-      "titulo": "Alicia en el país de las maravillas",
-      "autor": "Lewis Carroll",
-      "prestado": false,
-      "id": 6
+      "id": 4
     },
     {
       "titulo": "El alquimista ",
       "autor": "Paulo Coelho",
       "prestado": false,
-      "id": 7
+      "id": 5
     }
   ],
   "prestamos": [
@@ -48,14 +36,14 @@
       "alumnoId": "1",
       "libroId": "1",
       "fechaEntrega": "16/11/2022",
-      "fechaDevolucion": "",
+      "fechaDevolucion": "17/11/2022",
       "id": 1
     },
     {
       "alumnoId": "4",
       "libroId": "3",
       "fechaEntrega": "16/11/2022",
-      "fechaDevolucion": "",
+      "fechaDevolucion": "17/11/2022",
       "id": 2
     },
     {
@@ -71,18 +59,25 @@
       "fechaEntrega": "16/11/2022",
       "fechaDevolucion": "16/11/2022",
       "id": 4
+    },
+    {
+      "alumnoId": "1",
+      "libroId": "1",
+      "fechaEntrega": "17/11/2022",
+      "fechaDevolucion": "",
+      "id": 5
     }
   ],
   "alumnos": [
     {
       "dni": "42467088",
-      "nombre": "lucas vazquez",
+      "nombre": "Lucas Vazquez",
       "direccion": "av roca 2740",
       "id": 1
     },
     {
       "dni": "43678911",
-      "nombre": "sergio yalux",
+      "nombre": "Sergio Yalux",
       "direccion": "av roca 352 3A",
       "id": 2
     },
@@ -94,7 +89,7 @@
     },
     {
       "dni": "45123123",
-      "nombre": "mateo gonzalez",
+      "nombre": "Mateo Gonzalez",
       "direccion": "av salta 800",
       "id": 4
     }

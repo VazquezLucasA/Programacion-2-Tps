@@ -8,7 +8,7 @@ const btnDelete = document.getElementById("btnDelete")
 const container = document.getElementById("container")
 
 let globalAux
-let idiliar
+let idAuxiliar
 
 btnEdit.hidden = true
 
@@ -24,23 +24,27 @@ function mostrarTodosAlumnos(){
         respuesta.data.forEach(element => {
         container.innerHTML +=  '<button class="frm__btn" onclick="alumnoDeuda('+element.id+')">ELIMINAR</button>' + '<button class="frm__btn" onclick="modificarAlumno('+element.id+')">EDITAR</button>' +  element.dni + ", " +  element.nombre + ". " + element.direccion + "<hr>" 
 
-        //container.innerHTML += '<tr> <td>'+ element.dni + '</td> <td>' +  element.nombre +'</td> <td>'+element.direccion+'</td> <td><button class="frm__btn" onclick="eliminarAlumno('+element.id+')">ELIMINAR</button></td> <td><button class="frm__btn" onclick="modificarAlumno('+element.id+')">EDITAR</button> </td> </tr>'
-        
         })
         
     })
 }
 function guardarAlumno(){
-    axios.post("http://localhost:3000/alumnos",{dni: inputDni.value, nombre: inputName.value, direccion: inputAdress.value})
-    .then(function (resultado){
-        mostrarTodosAlumnos()
-    })
+    if(inputDni.value =="" || inputName.value == "")
+    {
+        alert("Debe completar DNI y Nombre")
+    }
+    else{
+        axios.post("http://localhost:3000/alumnos",{dni: inputDni.value, nombre: inputName.value, direccion: inputAdress.value})
+        .then(function (resultado){
+            mostrarTodosAlumnos()
+        })
+    }
 }
 
 async function modificarAlumno(id) {
     btnCreate.hidden = true
     btnEdit.hidden = false
-    idiliar = id
+    idAuxiliar = id
     resp = await axios.get("http://localhost:3000/alumnos/" + id)
     inputDni.value = resp.data.dni
     inputName.value = resp.data.nombre
@@ -50,19 +54,15 @@ async function modificarAlumno(id) {
 async function actualizarAlumno() {
     btnCreate.hidden = true;
     btnEdit.hidden = false;
-    resp = await axios.put("http://localhost:3000/alumnos/" + idiliar, {dni: inputDni.value, nombre: inputName.value, direccion: inputAdress.value})
+    resp = await axios.put("http://localhost:3000/alumnos/" + idAuxiliar, {dni: inputDni.value, nombre: inputName.value, direccion: inputAdress.value})
 }
 
 
 function eliminarAlumno(id){
    
-    
-   
-        
         let endpoint = "http://localhost:3000/alumnos/"+id
          axios.delete(endpoint)
          .then(function (res){mostrarTodosAlumnos()})
-    
     
 }
 
@@ -81,8 +81,6 @@ async function alumnoDeuda(id) {
         {
             auxDeuda = false
         }
-        
-        
     });
 
     if(auxDeuda)
@@ -90,11 +88,6 @@ async function alumnoDeuda(id) {
     else
         eliminarAlumno(id)
  }
-
-
-
-
-
 
 mostrarTodosAlumnos()
 

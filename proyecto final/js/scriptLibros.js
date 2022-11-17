@@ -7,14 +7,13 @@ const btnDelete = document.getElementById("btnDelete")
 
 const containerLibros = document.getElementById("containerLibros")
 
-let globalID
+let estado
 let auxiliar
 
 btnEdit.hidden = true
 
 btnCreate.addEventListener("click" , guardarLibro)
 btnEdit.addEventListener("click" , actualizarLibro)
-//btnDelete.addEventListener("click" , eliminar)
 
 function mostrarTodosLibros(){
     let endpoint = "http://localhost:3000/libros"
@@ -31,23 +30,24 @@ function mostrarTodosLibros(){
                 containerLibros.innerHTML +=  '<button class="frm__btn" onclick="eliminarLibro('+element.id+')">ELIMINAR</button>' + '<button class="frm__btn" onclick="modificarLibro('+element.id+')">EDITAR</button>' +  element.titulo + ", " +  element.autor + ", "+  "DISPONIBLE." + "<hr>" 
 
             }
-        
-      
-        
-        
-        //'<tr> <td>'+ element.titulo + '</td> <td>' +  element.autor +'</td> <td><button class="frm__btn" onclick="eliminarLibro('+element.id+')">ELIMINAR</button></td> <td><button class="frm__btn" onclick="modificarLibro('+element.id+')">EDITAR</button> </td> </tr>'
-    
         })
 
 
     })
 }
+
 function guardarLibro(){
-    axios.post("http://localhost:3000/libros",{titulo: inputTitle.value, autor: inputAuthor.value, prestado: false})
+    if(inputTitle.value == "" || inputAuthor.value == "")
+    {
+        alert("debe completar todos los campos")
+    }
+    else{
+        axios.post("http://localhost:3000/libros",{titulo: inputTitle.value, autor: inputAuthor.value, prestado: false})
     .then(function (resultado){
         alert("dato guardado")
         mostrarTodosLibros()
     })
+    }
 }
 
 async function modificarLibro(id) {
@@ -57,12 +57,13 @@ async function modificarLibro(id) {
     resp = await axios.get("http://localhost:3000/libros/" + id)
     inputTitle.value = resp.data.titulo
     inputAuthor.value = resp.data.autor
+    estado = resp.data.prestado
 }
 
 async function actualizarLibro() {
     btnCreate.hidden = true;
     btnEdit.hidden = false;
-    resp = await axios.put("http://localhost:3000/libros/" + auxiliar, { titulo: inputTitle.value, autor: inputAuthor.value })
+    resp = await axios.put("http://localhost:3000/libros/" + auxiliar, { titulo: inputTitle.value, autor: inputAuthor.value, prestado: estado})
 }
 
 
@@ -74,25 +75,13 @@ function eliminarLibro(id){
         if(!resultado.data.prestado){
             axios.delete(endpoint)
             .then(function (res){
-            mostrarTodosLibros()})
+                mostrarTodosLibros()
+            })
             alert("viva la pepa")
         }
         else
         alert("no se puede eliminar un libro prestado")
     })
-}
-
-function comprobarEstado(prestado){
-
-    if (prestado){
-
-        return "viva la pepa"
-
-    }else{
-
-    }
-
-
 }
 
 mostrarTodosLibros()
