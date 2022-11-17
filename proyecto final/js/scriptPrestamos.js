@@ -15,34 +15,59 @@ btnLend.addEventListener("click" , prestar)
 async function listar() {
     resp = await axios.get("http://localhost:3000/prestamos")
     container.innerHTML = ""
-    resp.data.reverse().forEach(element => {
+
+    
+    resp.data.reverse().forEach(async (element) => {
+        let alumno
+        let nombre
+        alumno = await getAlumno(element.alumnoId)
+        nombre = await getLibro(element.libroId)
+
+        console.log(alumno)
+        console.log(nombre)
+
         if(element.fechaDevolucion == "")
         {
+            
             container.innerHTML +=
-            '<button class="frm__btn " onclick="devolver('+element.id+')">Devolver</button>' + " " + element.alumnoId+ " " + element.libroId+ " " + element.fechaEntrega+ " " + element.fechaDevolucion+ " " + "<br>"
+            '<button class="frm__btn " onclick="devolver('+element.id+')">Devolver</button>' + " " + alumno + " " + nombre + " " + element.fechaEntrega+ " " + element.fechaDevolucion+ " " + "<hr>"
 
         }
         else{
             container.innerHTML +=
-            '<button class="frm__btn frm__btn--devuelto">DEVUELTO</button>' + " " + element.alumnoId+ " " + element.libroId+ " " + element.fechaEntrega+ " " + element.fechaDevolucion+ " " + "<br>"
+            '<button class="frm__btn frm__btn--devuelto">DEVUELTO</button>' + " " + alumno + " " + nombre + " " + element.fechaEntrega+ " " + element.fechaDevolucion+ " " + "<hr>"
 
         }
     })
 }
 
-
-async function getAlumno(prestamo){
-    resp = await axios.get("http://localhost:3000/alumnos/"+prestamo[0])
-    //prestamo[1] = resp.data.nombre
-    //console.log(prestamo[1])
+//
+// axios.get("http://localhost:3000/alumnos/"+element.alumnoId)
+//         .then(function(res){
+//             alumno = res.data.nombre
+//         })
+//         axios.get("http://localhost:3000/libros/"+element.libroId)
+//         .then(function(res){
+//             nombre = res.data.titulo
+//         })
+//
+async function getAlumno(id){
+    resp = await axios.get("http://localhost:3000/alumnos/"+id)
     return resp.data.nombre
 }
 
+async function getLibro(id){
+    resp = await axios.get("http://localhost:3000/libros/"+id)
+    return resp.data.titulo
+}
+
  async function devolver(id) {
+    const hoy = new Date()
     let endpoint = "http://localhost:3000/prestamos/" + id
     axios.get(endpoint)
     .then(async function(res){
-        resp = await axios.put(endpoint, {alumnoId: res.data.alumnoId, libroId: res.data.libroId, fechaEntrega: res.data.fechaEntrega, fechaDevolucion: 1})
+        resp = await axios.put(endpoint, {alumnoId: res.data.alumnoId, libroId: res.data.libroId, fechaEntrega: res.data.fechaEntrega, fechaDevolucion: hoy.toLocaleDateString()})
+        estadoPrestado(res.data.libroId, false)
     })
 }
 
@@ -111,8 +136,6 @@ function guardarLibro(){
     })
 }
 
-
-//|||||||||||||||||||||||||||||||
  function estadoPrestado(id , estado) {
     
     let endpoint = "http://localhost:3000/libros/" + id

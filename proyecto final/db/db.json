@@ -14,9 +14,9 @@
     },
     {
       "titulo": "Don Quijote de la Mancha",
+      "prestado": false,
       "autor": "Miguel de Cervantes Saavedra",
-      "id": 3,
-      "prestado": true
+      "id": 3
     },
     {
       "titulo": "El Señor de los Anillos",
@@ -32,9 +32,9 @@
     },
     {
       "titulo": "Las aventuras de Alicia en el país de las maravillas",
+      "prestado": false,
       "autor": "Lewis Carroll",
-      "id": 6,
-      "prestado": false
+      "id": 6
     },
     {
       "titulo": "El alquimista ",
@@ -43,25 +43,37 @@
       "id": 7
     },
     {
-      "titulo": "123",
+      "titulo": "test prestamo ",
       "prestado": true,
-      "autor": "123",
+      "autor": "1",
       "id": 8
     },
     {
-      "titulo": "asdasd",
-      "prestado": true,
-      "autor": "123",
+      "titulo": "test prestamo ",
+      "prestado": false,
+      "autor": "2",
       "id": 9
+    },
+    {
+      "titulo": "test prestamo ",
+      "autor": "3",
+      "prestado": false,
+      "id": 10
+    },
+    {
+      "titulo": "EL HIBOT ",
+      "prestado": false,
+      "autor": "FROID",
+      "id": 11
     }
   ],
   "prestamos": [
     {
-      "id": 3,
       "alumnoId": 7,
       "libroId": 3,
-      "fechaDevolucion": "",
-      "fechaEntrega": "20/12/2022"
+      "fechaEntrega": "20/12/2022",
+      "fechaDevolucion": "16/11/2022",
+      "id": 3
     },
     {
       "alumnoId": "8",
@@ -69,6 +81,27 @@
       "fechaEntrega": "16/11/2022",
       "fechaDevolucion": "",
       "id": 4
+    },
+    {
+      "alumnoId": "8",
+      "libroId": "10",
+      "fechaEntrega": "16/11/2022",
+      "fechaDevolucion": 1,
+      "id": 5
+    },
+    {
+      "alumnoId": "9",
+      "libroId": "8",
+      "fechaEntrega": "16/11/2022",
+      "fechaDevolucion": "16/11/2022",
+      "id": 6
+    },
+    {
+      "alumnoId": "10",
+      "libroId": "9",
+      "fechaEntrega": "16/11/2022",
+      "fechaDevolucion": "16/11/2022",
+      "id": 7
     }
   ],
   "alumnos": [
@@ -101,6 +134,24 @@
       "nombre": "mateo gonzalez",
       "direccion": "av salta 800",
       "id": 8
+    },
+    {
+      "dni": "1",
+      "nombre": "alumno prestado",
+      "direccion": "",
+      "id": 9
+    },
+    {
+      "dni": "2",
+      "nombre": "alumno prestado",
+      "direccion": "",
+      "id": 10
+    },
+    {
+      "dni": "3",
+      "nombre": "alumno prestado",
+      "direccion": "",
+      "id": 11
     }
   ]
 }

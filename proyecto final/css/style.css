@@ -128,7 +128,7 @@ main{
 .frm__select{
     
     height: 25px;
-    min-width: 150px;
+    width: 150px;
     text-align: center;
     border: 2px black solid;
     background-color: var(--color1);

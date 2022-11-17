@@ -25,20 +25,14 @@ function mostrarTodosLibros(){
 
             if (element.prestado){
                 
-                containerLibros.innerHTML +=  '<button class="frm__btn" onclick="eliminarLibro('+element.id+')">ELIMINAR</button>' + '<button class="frm__btn" onclick="modificarLibro('+element.id+')">EDITAR</button>' +  element.titulo + ", " +  element.autor + ", "+  "PRESTADO." + "<br>" 
+                containerLibros.innerHTML +=  '<button class="frm__btn" onclick="eliminarLibro('+element.id+')">ELIMINAR</button>' + '<button class="frm__btn" onclick="modificarLibro('+element.id+')">EDITAR</button>' +  element.titulo + ", " +  element.autor + ", "+  "PRESTADO." + "<hr>" 
 
             }else{
-                containerLibros.innerHTML +=  '<button class="frm__btn" onclick="eliminarLibro('+element.id+')">ELIMINAR</button>' + '<button class="frm__btn" onclick="modificarLibro('+element.id+')">EDITAR</button>' +  element.titulo + ", " +  element.autor + ", "+  "DISPONIBLE." + "<br>" 
+                containerLibros.innerHTML +=  '<button class="frm__btn" onclick="eliminarLibro('+element.id+')">ELIMINAR</button>' + '<button class="frm__btn" onclick="modificarLibro('+element.id+')">EDITAR</button>' +  element.titulo + ", " +  element.autor + ", "+  "DISPONIBLE." + "<hr>" 
 
             }
         
-            
-        
-        
-        
-        
-        
-        
+      
         
         
         //'<tr> <td>'+ element.titulo + '</td> <td>' +  element.autor +'</td> <td><button class="frm__btn" onclick="eliminarLibro('+element.id+')">ELIMINAR</button></td> <td><button class="frm__btn" onclick="modificarLibro('+element.id+')">EDITAR</button> </td> </tr>'
